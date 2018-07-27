@@ -1,6 +1,8 @@
 # Vue Lista Anime
 
-> CRUD simples desenvolvido em Vue, Materialize CSS e Firebase.
+CRUD simples desenvolvido em Vue, Materialize CSS e Firebase.
+
+Uma versão online usando o Hosting do Firebase está disponível [nesse endereço](https://vue-lista-anime.firebaseapp.com/).
 ![vue](https://user-images.githubusercontent.com/30444471/43339044-992f24fc-91ae-11e8-8832-2a7838751b60.PNG)
 
 ## Build Setup
