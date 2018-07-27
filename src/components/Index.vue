@@ -6,6 +6,10 @@
         {{ anime.title }}
       </span>
 
+      <div class="card-image">
+        <img :src="anime.image" alt="">
+      </div>
+
       <div class="card-content">
 
         <div v-for="(genre, index) in anime.genres" :key="index" class="chip center-align">
@@ -85,5 +89,9 @@ export default {
   position: absolute;
   top: 4px;
   right: 4px;
+}
+
+.index .card-image {
+  margin-top: 10px;
 }
 </style>
