@@ -2,7 +2,7 @@
 
 CRUD simples desenvolvido em Vue, Materialize CSS e Firebase.
 
-![vue](https://user-images.githubusercontent.com/30444471/43339044-992f24fc-91ae-11e8-8832-2a7838751b60.PNG)
+![vue2](https://user-images.githubusercontent.com/30444471/43356046-d5db8274-923f-11e8-97ed-d05783d93d66.PNG)
 
 ## Build Setup
 
@@ -22,5 +22,5 @@ npm run build --report
 
 ## TODO
 - [ ] Terminar de tratar exceções no cadastro/edição de Animes.
-- [ ] Adicionar imagens a cada card.
+- [x] Adicionar imagens a cada card.
 - [ ] Melhorar o design como um todo.
