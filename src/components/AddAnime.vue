@@ -12,6 +12,11 @@
                 <input type="number" name="episodes" v-model="episodes">
             </div>
 
+            <div class="field">
+                <label for="img">Imagem URL</label>
+                <input type="text" name="img" v-model="image">
+            </div>
+
             <div class="field" v-for="(genre, index) in genres" :key="index">
                 <label for="genre">Genre {{ index + 1 }}</label>
                 <input type="text" name="genre" v-model="genres[index]">
@@ -57,6 +62,7 @@ export default {
             synopsis: null,
             slug: null,
             genres: [],
+            image: null,
             anotherGenre: null,
             errorTitle: null,
             errorGenre: null
@@ -77,7 +83,8 @@ export default {
                     episodes: this.episodes,
                     synopsis: this.synopsis,
                     slug: this.slug,
-                    genres: this.genres
+                    genres: this.genres,
+                    image: this.image
                 }).then(() => {
                     this.$router.push({ name: 'Index' })
                 }).catch(error => console.log(error))
