@@ -10,6 +10,11 @@
                 <label for="password">Password:</label>
                 <input type="password" name="password" v-model="password">
             </div>
+
+            <div class="field center-align">
+                <p class="red-text">{{ feedback }}</p>
+            </div>
+
             <div class="field center">
                 <button class="btn deep-teal">Signup</button>
             </div>
@@ -25,18 +30,25 @@ export default {
     data() {
         return {
             email: null,
-            password: null
+            password: null,
+            feedback: null
         }
     },
     methods: {
         signup() {
             // alert('signup')
-            firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
+            if(this.email && this.password) {
+                firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
                 .then(user => {
                     console.log(user)
                     alert(`Account created for ${user.user.email}`)
                     this.$router.push({ name: 'Index' })
+                }).catch(err => {
+                    this.feedback = err.message
                 })
+            } else {
+                this.feedback = 'Você precisa preencher os dois campos!'
+            }
         }
     }
 }
