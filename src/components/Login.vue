@@ -1,5 +1,15 @@
 <template>
     <div class="login container">
+        
+        <picture>
+            <source media="(max-height: 690px)" srcset="../assets/blank.gif">
+            <source media="(max-height: 730px)" srcset="../assets/ochako_200.png">
+            <source media="(max-width: 800px)" srcset="../assets/blank.gif">
+            <source media="(max-width: 1100px)" srcset="../assets/ochako_200.png">
+            <source media="(max-width: 1300px)" srcset="../assets/ochako_291.png">
+            <img class="img-right" src="../assets/ochako_408.png" alt="Flowers" style="width:auto;">
+        </picture>
+
         <form @submit.prevent="login" class="card-panel">
             <h2 class="center teal-text">login</h2>
             <div class="field">
@@ -60,6 +70,21 @@ export default {
 .login {
     max-width: 400px;
     margin-top: 60px;
+}   
+
+.img-right {
+    max-height: 650px;
+    position: fixed;
+    bottom:0px;
+    right: 0%;
+    /* opacity: 0.8; */
+}
+
+.img-left {
+    height: 550px;
+    position:fixed;
+    bottom:0px;
+    left: 0%;
 }
 
 .login h2 {

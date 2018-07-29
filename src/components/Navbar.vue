@@ -50,6 +50,7 @@ export default {
         logout() {
             // alert('logout')
             firebase.auth().signOut().then(() => {
+                // this.currentUser = null
                 this.$router.push({ name: 'Login' })
             })
         }

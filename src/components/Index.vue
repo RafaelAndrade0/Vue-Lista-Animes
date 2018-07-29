@@ -91,7 +91,8 @@ export default {
   right: 4px;
 }
 
-.index .card-image {
+.index .card-image img {
   margin-top: 10px;
+  height: 180px;
 }
 </style>
