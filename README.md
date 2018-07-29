@@ -21,6 +21,7 @@ npm run build --report
 ```
 
 ## TODO
-- [ ] Terminar de tratar exceções no cadastro/edição de Animes.
+- [x] Terminar de tratar exceções no cadastro/edição de Animes.
 - [x] Adicionar imagens a cada card.
 - [ ] Melhorar o design como um todo.
+- [x] Adicionar Login/Register/Logout de usuários.
