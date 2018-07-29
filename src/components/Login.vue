@@ -10,6 +10,11 @@
                 <label for="password">Password:</label>
                 <input type="password" name="password" v-model="password">
             </div>
+            
+            <div class="field center-align">
+                <p class="red-text">{{ feedback }}</p>
+            </div>
+
             <div class="field center">
                 <button class="btn deep-teal">login</button>
             </div>
@@ -25,18 +30,27 @@ export default {
     data() {
         return {
             email: null,
-            password: null
+            password: null,
+            feedback: null
         }
     },
     methods: {
         login() {
             // alert('login')
-            firebase.auth().signInWithEmailAndPassword(this.email, this.password)
+            if(this.email && this.password) {
+                firebase.auth().signInWithEmailAndPassword(this.email, this.password)
                 .then(user => {
                     console.log(user)
                     alert(`You are logged in as ${user.user.email}`)
                     this.$router.push({ name: 'Index' })
+                }).catch(err => {
+                    // console.log(err)
+                    this.feedback = err.message
                 })
+                this.feedback = null
+            } else {
+                this.feedback = 'Preencha os dois campos!'
+            }
         }
     }
 }

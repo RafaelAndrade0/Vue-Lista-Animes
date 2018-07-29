@@ -8,18 +8,22 @@
                 </router-link>
             </a>
             <ul class="right hide-on-med-and-down">
-                <li>
+                <li v-if="!currentUser">
                     <router-link :to="{ name: 'Login' }">Login</router-link>
                 </li>
-                <li>
-                    <router-link :to="{ name: 'Signup' }">Signup</router-link>
+                <li v-if="!currentUser">
+                    <router-link :to="{ name: 'Signup' }">Registrar</router-link>
                 </li>
 
-                <li>
+                <li v-if="currentUser">
+                    <span> Bem vindo, {{ currentUser.email }}</span>
+                </li>
+
+                <li v-if="currentUser">
                     <a @click="logout" class="btn-small white black-text">Logout</a>
                 </li>
 
-                <li>
+                <li v-if="currentUser">
                     <a class="waves-effect waves-light btn">
                         <router-link :to="{ name: 'AddAnime' }">
                             Adicionar Anime
@@ -39,7 +43,7 @@ export default {
     name: 'Navbar',
     data() {
         return {
-            // currentUser: null
+            currentUser: null
         }
     },
     methods: {
@@ -49,6 +53,16 @@ export default {
                 this.$router.push({ name: 'Login' })
             })
         }
+    },
+    created() {
+        firebase.auth().onAuthStateChanged((user) => {
+            if(user){
+                // console.log(user.email)
+                this.currentUser = user
+            } else {
+                this.currentUser = null
+            }
+        })
     }
 }
 </script>
