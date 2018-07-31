@@ -136,10 +136,8 @@ export default {
     font-size: 30px;
 }
 
-#index {
-  
-  background:url('https://78.media.tumblr.com/e4b84cd8fe05ddf9906049bd339efaf8/tumblr_oryjp5IObH1vb6slso1_500.png');
-  /* background-size: 300px; */
+#index { 
+  background:url('../assets/midoriya_bg.png');
   background-position: top left;
   background-repeat: no-repeat;
 }
