@@ -140,6 +140,7 @@ export default {
   background:url('../assets/midoriya_bg.png');
   background-position: top left;
   background-repeat: no-repeat;
+  min-height: 700px;
 }
 
 </style>
