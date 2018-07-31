@@ -50,11 +50,9 @@ export default {
             if(this.email && this.password) {
                 firebase.auth().signInWithEmailAndPassword(this.email, this.password)
                 .then(user => {
-                    console.log(user)
                     alert(`You are logged in as ${user.user.email}`)
                     this.$router.push({ name: 'Index' })
                 }).catch(err => {
-                    // console.log(err)
                     this.feedback = err.message
                 })
                 this.feedback = null
@@ -77,7 +75,6 @@ export default {
     position: fixed;
     bottom:0px;
     right: 0%;
-    /* opacity: 0.8; */
 }
 
 .img-left {

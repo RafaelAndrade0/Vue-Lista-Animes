@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="index">
     
     <div class="change-mode left-align">
       <button @click="showMode = !showMode" class="btn">Mudar Modo de Exibição</button>
@@ -36,7 +36,8 @@
             Episodes: {{ anime.episodes }}
           </p>
 
-          <p>{{ anime.synopsis}}</p>
+          <p>{{ anime.synopsis | readMore(300, '...')}}</p>
+
         </div>
 
         <a class="btn-floating btn-small red delete" @click="AnimeDelete(anime.id)">
@@ -75,23 +76,26 @@ export default {
       }).catch(error => console.log(error))
     }
   },
+  filters: {
+    readMore(text, length, suffix) {
+      return text.substring(0, length) + suffix
+    }
+  },
   created() {
     // fetch data from firestore
     db.collection('animes').get()
     .then(snapshot => {
       snapshot.forEach(doc => {
-        // console.log(doc.data(), doc.id)
         let anime = doc.data()
         anime.id = doc.id
         this.animes.push(anime)
-        // console.log(this.smoothies)
       })
     })
   },
   computed: {
       animeFilter() {
           return this.animes.filter(anime => {
-              return anime.title.match(this.searchAnime)
+              return anime.title.toLowerCase().match(this.searchAnime.toLowerCase())
           })
       }
   }
@@ -131,4 +135,13 @@ export default {
 .index-list h3 {
     font-size: 30px;
 }
+
+#index {
+  
+  background:url('https://78.media.tumblr.com/e4b84cd8fe05ddf9906049bd339efaf8/tumblr_oryjp5IObH1vb6slso1_500.png');
+  /* background-size: 300px; */
+  background-position: top left;
+  background-repeat: no-repeat;
+}
+
 </style>
