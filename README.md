@@ -2,7 +2,7 @@
 
 CRUD simples desenvolvido em Vue, Materialize CSS e Firebase.
 
-![simplelimpjaeger-size_restricted](https://user-images.githubusercontent.com/30444471/43367119-7cf972da-931e-11e8-8fcf-53e43d9941bb.gif)
+![uniqueglossyiberianmole-size_restricted](https://user-images.githubusercontent.com/30444471/43494883-57e233e4-950b-11e8-9097-12ff16dbfe20.gif)
 
 ## Build Setup
 
